@@ -67,5 +67,17 @@ cnoremap <C-e> <End>
 nmap t o<ESC>k
 nmap T O<ESC>j
 
-" ===== Plugins =====
+" ===== Plugin Settings =====
+" NERDTree
+let NERDTreeShowFiles=1
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+let NERDTreeQuitOnOpen=1
+let NERDTreeIgnore=['.DS_Store']
 
+" ====== Plugin Shortcuts ======
+" NERDTree
+map <leader>nt :NERDTreeToggle<Enter>
+map <leader>nt :NERDTreeToggle<Enter>
+map <leader>nf :NERDTreeFind<Enter>
