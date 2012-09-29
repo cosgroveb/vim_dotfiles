@@ -76,6 +76,10 @@ let NERDTreeDirArrows=1
 let NERDTreeQuitOnOpen=1
 let NERDTreeIgnore=['.DS_Store']
 
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 " ====== Plugin Shortcuts ======
 " NERDTree
 map <leader>nt :NERDTreeToggle<Enter>
