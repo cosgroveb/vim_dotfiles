@@ -17,6 +17,7 @@ set hidden
 " color settings
 set background=dark
 set t_Co=256
+colorscheme Tomorrow-Night-Bright
 
 " text editing settings
 set wrap
@@ -47,7 +48,6 @@ set number
 set encoding=utf-8
 
 " ===== Shortcuts =====
-
 " navigation shortcuts
 "   splits
 noremap <C-h> <C-w>h
@@ -66,6 +66,9 @@ cnoremap <C-e> <End>
 " insert new lines without going into insert mode
 nmap t o<ESC>k
 nmap T O<ESC>j
+
+" reload the vimrc file
+nmap <silent> <leader>vis :so $MYVIMRC<CR>
 
 " ===== Plugin Settings =====
 " NERDTree
