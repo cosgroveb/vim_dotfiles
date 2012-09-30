@@ -70,6 +70,9 @@ nmap T O<ESC>j
 " reload the vimrc file
 nmap <silent> <leader>vis :so $MYVIMRC<CR>
 
+" retag
+map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f --langmap=Lisp:+.clj<CR> 
+
 " ===== Plugin Settings =====
 " NERDTree
 let NERDTreeShowFiles=1
