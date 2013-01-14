@@ -1,6 +1,7 @@
 call pathogen#infect()
 filetype plugin indent on
 syntax on
+au BufNewFile,BufRead *.pp setf ruby
 
 " ===== Settings =====
 " search
@@ -16,7 +17,6 @@ set hidden
 
 " color settings
 set background=dark
-set t_Co=256
 colorscheme Tomorrow-Night-Bright
 
 " text editing settings
@@ -86,8 +86,39 @@ let NERDTreeIgnore=['.DS_Store']
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" CommandT
+let g:CommandTMaxHeight = 15
+let g:CommandTMatchWindowAtTop = 1
+let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
+let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+
+" vimux
+
+let g:VimuxUseNearestPane = 1
+
 " ====== Plugin Shortcuts ======
 " NERDTree
 map <leader>nt :NERDTreeToggle<Enter>
 map <leader>nt :NERDTreeToggle<Enter>
 map <leader>nf :NERDTreeFind<Enter>
+
+map <silent> <leader>ff :CtrlP<CR>
+" CommandT
+"
+"map <silent> <leader>fb :CommandTBuffer<CR>
+"map <silent> <leader>fr :CommandTFlush<CR>
+
+" Vimux
+map <silent> <LocalLeader>rl :wa<CR> :RunLastVimTmuxCommand<CR>
+map <silent> <LocalLeader>ri :wa<CR> :InspectVimTmuxRunner<CR>
+map <silent> <LocalLeader>rx :wa<CR> :CloseVimTmuxPanes<CR>
+map <silent> <LocalLeader>vp :PromptVimTmuxCommand<CR>
+vmap <silent> <LocalLeader>vs "vy :call RunVimTmuxCommand(@v)<CR>
+map <silent> <LocalLeader>rf :wa<CR> :RunRubyFocusedTest<CR>
+map <silent> <LocalLeader>rc :wa<CR> :RunRubyFocusedContext<CR>
+map <silent> <LocalLeader>rb :wa<CR> :RunAllRubyTests<CR>
+
+" TComment
+map <silent> <LocalLeader>cc :TComment<CR>
+map <silent> <LocalLeader>uc :TComment<CR>
