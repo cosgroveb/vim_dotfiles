@@ -46,6 +46,7 @@ set statusline+=%P                        " percentage of file
 
 set number
 set encoding=utf-8
+set backupdir=/tmp
 
 " ===== Shortcuts =====
 " navigation shortcuts
@@ -71,7 +72,7 @@ nmap T O<ESC>j
 nmap <silent> <leader>vis :so $MYVIMRC<CR>
 
 " retag
-map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f --langmap=Lisp:+.clj<CR> 
+map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f --langmap=Lisp:+.clj<CR>
 
 " ===== Plugin Settings =====
 " NERDTree
@@ -122,3 +123,17 @@ map <silent> <LocalLeader>rb :wa<CR> :RunAllRubyTests<CR>
 " TComment
 map <silent> <LocalLeader>cc :TComment<CR>
 map <silent> <LocalLeader>uc :TComment<CR>
+
+" ====== Whitespace management ======
+" Highlight trailing whitespace
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
+
+" Set up highlight group & retain through colorscheme changes
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+function! Trim()
+    %s/\s*$//
+endfunction
+command! -nargs=0 Trim :call Trim()
+nnoremap <silent> <Leader>cw :Trim<CR>
