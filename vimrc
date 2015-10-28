@@ -1,4 +1,17 @@
-call pathogen#infect()
+" ===== Plugins ======
+call plug#begin('~/.vim/plugged')
+
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'benmills/vimux'
+Plug 'braintreeps/bufexplorer'
+Plug 'pgr0ss/vimux-ruby-test'
+Plug 'tomtom/tcomment_vim'
+
+" Add plugins to &runtimepath
+call plug#end()
+
 filetype plugin indent on
 syntax on
 au BufNewFile,BufRead *.pp setf ruby
@@ -17,7 +30,7 @@ set hidden
 
 " color settings
 set background=dark
-colorscheme Tomorrow-Night-Bright
+colorscheme vibrantink
 
 " text editing settings
 set wrap
@@ -72,7 +85,7 @@ nmap T O<ESC>j
 nmap <silent> <leader>vis :so $MYVIMRC<CR>
 
 " retag
-map <silent> <LocalLeader>rt :!ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f --langmap=Lisp:+.clj<CR>
+map <silent> <LocalLeader>rt :!/usr/local/Cellar/ctags/5.8_1/bin/ctags -R --exclude=".git\|.svn\|log\|tmp\|db\|pkg" --extra=+f --langmap=Lisp:+.clj<CR>
 
 " ===== Plugin Settings =====
 " NERDTree
@@ -137,3 +150,13 @@ function! Trim()
 endfunction
 command! -nargs=0 Trim :call Trim()
 nnoremap <silent> <Leader>cw :Trim<CR>
+
+" Mappings for eclim/java
+"
+nnoremap <buffer> <leader>i :JavaImport<cr>
+nnoremap <buffer> <leader>d :JavaDocSearch -x declarations<cr>
+nnoremap <buffer> <cr> :JavaSearchContext<cr>
+nnoremap <buffer> <leader>jj :JavaCorrect<cr>
+let g:EclimBrowser = 'chrome'
+
+
