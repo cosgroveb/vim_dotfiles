@@ -8,6 +8,7 @@ Plug 'benmills/vimux'
 Plug 'braintreeps/bufexplorer'
 Plug 'pgr0ss/vimux-ruby-test'
 Plug 'tomtom/tcomment_vim'
+Plug 'withgod/vim-sourcepawn.git'
 
 " Add plugins to &runtimepath
 call plug#end()
