@@ -8,7 +8,7 @@ Plug 'benmills/vimux'
 Plug 'braintreeps/bufexplorer'
 Plug 'pgr0ss/vimux-ruby-test'
 Plug 'tomtom/tcomment_vim'
-Plug 'withgod/vim-sourcepawn.git'
+Plug 'Valloric/YouCompleteMe'
 
 " Add plugins to &runtimepath
 call plug#end()
@@ -160,4 +160,6 @@ nnoremap <buffer> <cr> :JavaSearchContext<cr>
 nnoremap <buffer> <leader>jj :JavaCorrect<cr>
 let g:EclimBrowser = 'chrome'
 
-
+" cpp stuff
+"
+let &path.="src/include,/usr/include/AL,"
