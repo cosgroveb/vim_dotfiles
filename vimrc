@@ -9,6 +9,8 @@ Plug 'braintreeps/bufexplorer'
 Plug 'pgr0ss/vimux-ruby-test'
 Plug 'tomtom/tcomment_vim'
 Plug 'Valloric/YouCompleteMe'
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
 
 " Add plugins to &runtimepath
 call plug#end()
