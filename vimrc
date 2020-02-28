@@ -62,7 +62,9 @@ set statusline+=%P                        " percentage of file
 
 set number
 set encoding=utf-8
-set backupdir=/tmp
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
 
 " ===== Shortcuts =====
 " navigation shortcuts
