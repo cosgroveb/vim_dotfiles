@@ -102,6 +102,7 @@ Plug 'romainl/vim-qf'
 Plug 'wellle/tmux-complete.vim'
 Plug 'samguyjones/vim-crosspaste'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'DanBradbury/copilot-chat.vim', {'branch': 'main'}
 
 Plug 'github/copilot.vim'
 
